@@ -9,3 +9,15 @@ navigationItems.forEach((item) => {
   });
 });
 console.log("ben");
+//
+const animationElement = document.querySelector(".basic-detail");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      animationElement.classList.add("animation-visible");
+    } else {
+      animationElement.classList.remove("animation-visible");
+    }
+  });
+});

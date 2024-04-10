@@ -135,6 +135,85 @@ h3 {
   border-radius: 0.9rem;
 }
 
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+}
+/* //////////////////////////////////// */
+/* //////////////Profile////////////// */
+/* //////////////////////////////////// */
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-size: 1.8rem;
+  align-items: center;
+  padding: 3.2rem;
+  overflow: hidden;
+}
+
+.profile img {
+  flex: 0 0 40rem;
+  height: 30rem;
+  /* animation: slideInFromUp 3s forwards; */
+}
+.basic-detail {
+  flex: 0 0 40%;
+  padding: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+  gap: 2.4rem;
+  /* animation: slideInFromDown 3s forwards; */
+}
+.basic-detail a {
+  text-decoration: none;
+}
+.basic-detail strong {
+  margin-right: 1.2rem;
+}
+.basic-detail p {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1.2rem;
+}
+/* //////////////////////////////////// */
+/* //////////////Animations////////////// */
+/* //////////////////////////////////// */
+.animation-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.animation-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@keyframes slideInFromDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInFromUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 @keyframes slideInFromLeft {
   from {
     transform: translateX(-100%);
@@ -154,11 +233,4 @@ h3 {
     transform: translateX(0);
     opacity: 1;
   }
-}
-.hero {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px;
 }
