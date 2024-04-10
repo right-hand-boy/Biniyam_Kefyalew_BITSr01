@@ -161,7 +161,7 @@ h3 {
   /* animation: slideInFromUp 3s forwards; */
 }
 .basic-detail {
-  flex: 0 0 40%;
+  flex: 0 0 50rem;
   padding: 3.2rem;
   display: flex;
   flex-direction: column;
@@ -181,6 +181,46 @@ h3 {
   align-items: center;
   gap: 1.2rem;
 }
+/* //////////////////////////////////// */
+/* //////Education Tnformation///////// */
+/* //////////////////////////////////// */
+.education-details {
+  box-shadow: 0 0 0.3rem rgba(17, 17, 17, 0.068);
+  padding: 3.2rem;
+  background-color: rgb(245, 245, 220);
+}
+.education-details h1 {
+  box-shadow: 0 0 0.3rem rgba(17, 17, 17, 0.068);
+  width: max-content;
+  margin: 3.2rem auto;
+}
+.schools {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 3.2rem;
+}
+.education-details img {
+  width: 100%;
+}
+.school {
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  flex: 0 0 30rem;
+  box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.089);
+  padding: 1.2rem;
+}
+.school-image {
+  margin-top: 3.2rem;
+}
+/* //////////////////////////////////// */
+/* //////Education Tnformation///////// */
+/* //////////////////////////////////// */
+
 /* //////////////////////////////////// */
 /* //////////////Animations////////////// */
 /* //////////////////////////////////// */
