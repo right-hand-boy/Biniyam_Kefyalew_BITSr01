@@ -1,0 +1,38 @@
+@media (max-width: 60em) {
+  .project {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .project-box {
+    height: 65rem;
+  }
+  .project-description {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .hero-image {
+    width: 25rem;
+  }
+}
+
+@media (max-width: 40em) {
+  html {
+    font-size: 50%;
+  }
+  .project-image {
+    width: 15rem;
+    height: 10rem;
+  }
+  .contact-form-box {
+    margin: 3.2rem 0;
+  }
+  .contact-form-box input,
+  #subject,
+  #phone {
+    width: 85%;
+  }
+  #email,
+  #name {
+    width: 70%;
+  }
+}

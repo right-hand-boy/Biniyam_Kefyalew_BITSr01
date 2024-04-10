@@ -135,13 +135,6 @@ h3 {
   border-radius: 0.9rem;
 }
 
-.hero {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px;
-}
 /* //////////////////////////////////// */
 /* //////////////Profile////////////// */
 /* //////////////////////////////////// */
@@ -286,7 +279,7 @@ h3 {
 }
 .project-description {
   line-height: 1.8;
-  width: 80%;
+  width: 100%;
   font-size: 1.8rem;
   justify-self: center;
 }
@@ -304,6 +297,94 @@ h3 {
   font-size: 1.8rem;
   right: 2%;
 } */
+/* //////////////////////////////////// */
+/* //////////////Contact////////////// */
+/* //////////////////////////////////// */
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 6.2rem;
+  padding: 3.2rem;
+  width: 90%;
+  background-color: beige;
+}
+.links {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 3.2rem;
+}
+.contact-form-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "name email";
+  gap: 2rem;
+}
+.contact-form-box input {
+  padding: 1rem 0.2rem;
+}
+
+.contact-form-box input,
+.contact-form-box textarea,
+.contact-form-box button {
+  grid-column: 1/-1;
+  border-radius: 1.2rem;
+  padding: 1.2rem 3.2rem;
+  border: none;
+  outline: none;
+  background-color: rgba(3, 133, 115, 0.185);
+}
+#name {
+  grid-area: name;
+}
+#email {
+  grid-area: email;
+}
+.submit-button {
+  padding: 1.2rem 0.2rem;
+  cursor: pointer;
+}
+.contat-image {
+  width: 25rem;
+} /* //////////////////////////////////// */
+/* //////////////Animations////////////// */
+/* //////////////////////////////////// */
+
+.brief-bio {
+  width: 90%;
+  padding: 3.2rem;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  font-size: 1.8rem;
+}
+.brief-bio p {
+  line-height: 1.8;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brief-bio h1 {
+  font-size: 4.4rem;
+}
+.brief-bio p strong {
+  font-size: 1.8rem;
+}
+.languages {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+.biography {
+  height: 10rem;
+}
+
 /* //////////////////////////////////// */
 /* //////////////Animations////////////// */
 /* //////////////////////////////////// */
