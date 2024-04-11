@@ -2,9 +2,6 @@
   .details p {
     display: grid;
   }
-  .biography {
-    height: auto;
-  }
 }
 @media (max-width: 71rem) {
   .navigation-items {
@@ -34,6 +31,7 @@
   .contact-form-box {
     display: flex;
     flex-direction: column;
+    width: -webkit-fill-available;
   }
   .project {
     grid-template-columns: 1fr !important;
@@ -145,5 +143,13 @@
   }
   .brief-bio p {
     font-size: 1.8rem;
+  }
+}
+@media (max-width: 20em) {
+  html {
+    font-size: 30%;
+  }
+  .skills li {
+    display: grid !important;
   }
 }

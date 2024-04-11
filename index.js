@@ -9,6 +9,8 @@ const contact_button = document.querySelector(".btn_1");
 const more_button = document.querySelector(".btn_2");
 const menu_button = document.querySelector(".menu-button");
 const menu_box = document.querySelector(".menu-box");
+const menu_items = document.querySelectorAll(".menu-item");
+const close_btn = document.querySelector(".close");
 
 var txt = ` 
 Following my academic endeavors, I ventured into the professional realm, where I
@@ -38,27 +40,49 @@ more_button.addEventListener("click", function () {
 //////////////////////////////
 ///////////Navigation/////////
 //////////////////////////////
-
+function scroler(scrol) {
+  window.scrollTo({
+    left: scrol.left + window.pageXOffset,
+    top: scrol.top + window.pageYOffset - navHeight,
+    behavior: "smooth",
+  });
+}
 // scrolling when navigation item click
 navigationItems.forEach((item) => {
   item.addEventListener("click", function (e) {
     const component = document.getElementById(`${e.target.dataset.scroll}`);
     const scrol = component.getBoundingClientRect();
     // scrollTo.scrollIntoView({ behavior: "smooth" });
-    window.scrollTo({
-      left: scrol.left + window.pageXOffset,
-      top: scrol.top + window.pageYOffset - navHeight,
-      behavior: "smooth",
-    });
+    scroler(scrol);
+  });
+});
+menu_items.forEach((item) => {
+  item.addEventListener("click", function (e) {
+    const component = document.getElementById(`${e.target.dataset.scroll}`);
+    const scrol = component.getBoundingClientRect();
+    // scrollTo.scrollIntoView({ behavior: "smooth" });
+    scroler(scrol);
     if (!menu_box.classList.toggle("hidden")) {
       menu_box.classList.add("hidden");
     }
   });
 });
-
 // menu botton
 menu_button.addEventListener("click", function () {
   menu_box.classList.toggle("hidden");
+});
+
+// handling esc key
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    menu_box.classList.add("hidden");
+  }
+});
+
+// handling close button key
+close_btn.addEventListener("click", function (e) {
+  menu_box.classList.add("hidden");
 });
 ///////////////////////////////////////
 // Sticky navigation: Intersection Observer API
@@ -141,56 +165,3 @@ document.addEventListener("keydown", function (e) {
   if (e.key === "ArrowLeft") prevSlide();
   e.key === "ArrowRight" && nextSlide();
 });
-
-//////////////////////////////
-///////////Contact////////////
-//////////////////////////////
-
-function sendEmail(E) {
-  // Get form data
-  E.preventDefault();
-  var name = document.getElementById("name").value;
-  var email = document.getElementById("email").value;
-  var subject = document.getElementById("subject").value;
-  var phone = document.getElementById("phone").value;
-  var message = document.getElementById("message").value;
-
-  // Compose email link
-  var mailtoLink =
-    "mailto:biniyamkefyalew1@gmail.com" +
-    "?subject=" +
-    encodeURIComponent(subject) +
-    "&body=" +
-    encodeURIComponent(
-      "Name: " +
-        name +
-        "\n" +
-        "Email: " +
-        email +
-        "\n" +
-        "Phone: " +
-        phone +
-        "\n" +
-        "Message: " +
-        message
-    );
-
-  // Create a temporary <a> element
-  var anchor = document.createElement("a");
-  anchor.href = mailtoLink;
-  anchor.target = "_blank";
-
-  // Append the anchor to the document body
-  document.body.appendChild(anchor);
-
-  // Trigger a click event on the anchor
-  anchor.click();
-
-  // Clean up: remove the temporary anchor
-  document.body.removeChild(anchor);
-  console.log("cli");
-}
-
-document
-  .querySelector(".submit-button")
-  .addEventListener("click", (e) => sendEmail(e));
