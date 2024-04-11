@@ -2,17 +2,101 @@ const navigationItems = document.querySelectorAll(".navigation-item");
 const slides = document.querySelectorAll(".project");
 const project_images = document.querySelectorAll(".project-image");
 const biography = document.querySelector(".biography");
+const header = document.querySelector(".hero-section");
+const nav = document.querySelector(".navigation");
+const navHeight = nav.getBoundingClientRect().height;
+const contact_button = document.querySelector(".btn_1");
+const more_button = document.querySelector(".btn_2");
+const menu_button = document.querySelector(".menu-button");
+const menu_box = document.querySelector(".menu-box");
+
+var txt = ` 
+Following my academic endeavors, I ventured into the professional realm, where I
+ have had the privilege of working on diverse projects across various domains.
+  Whether it's developing scalable web applications, designing efficient algorithms,
+ or troubleshooting complex technical issues, I thrive on challenges that push the boundaries of innovation.
+Beyond my professional endeavors.`;
 const maxSlide = slides.length;
+var speed = 25; // The speed/duration of the effect in milliseconds
+var i = 0;
 let curSlide = 0;
-// handling clicked in navigation
+
+//////////////////////////////
+///////////Hero///////////////
+//////////////////////////////
+
+// handling click on contact button
+contact_button.addEventListener("click", function () {
+  document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+});
+
+// handling click on more button
+more_button.addEventListener("click", function () {
+  document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+});
+
+//////////////////////////////
+///////////Navigation/////////
+//////////////////////////////
+
+// scrolling when navigation item click
 navigationItems.forEach((item) => {
-  item.addEventListener("click", function () {
-    navigationItems.forEach((item) => item.classList.remove("active")); //  Remove active class from all items
-    this.classList.add("active"); // Add active class to the clicked item
+  item.addEventListener("click", function (e) {
+    const component = document.getElementById(`${e.target.dataset.scroll}`);
+    const scrol = component.getBoundingClientRect();
+    // scrollTo.scrollIntoView({ behavior: "smooth" });
+    window.scrollTo({
+      left: scrol.left + window.pageXOffset,
+      top: scrol.top + window.pageYOffset - navHeight,
+      behavior: "smooth",
+    });
+    if (!menu_box.classList.toggle("hidden")) {
+      menu_box.classList.add("hidden");
+    }
   });
 });
 
-//
+// menu botton
+menu_button.addEventListener("click", function () {
+  menu_box.classList.toggle("hidden");
+});
+///////////////////////////////////////
+// Sticky navigation: Intersection Observer API
+
+const stickyNav = function (entries) {
+  const [entry] = entries;
+  // console.log(entry);
+
+  if (!entry.isIntersecting) nav.classList.add("sticky");
+  else nav.classList.remove("sticky");
+};
+
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${navHeight}px`,
+});
+
+headerObserver.observe(header);
+
+//////////////////////////////
+///////////Biography/////////
+//////////////////////////////
+
+// // auto typing effect on bio
+function typeWriter() {
+  if (i < txt.length) {
+    biography.innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+typeWriter();
+
+//////////////////////////////
+///////////Portfolio/////////
+//////////////////////////////
+
 const goToSlide = function (slide) {
   slides.forEach(
     (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
@@ -58,78 +142,20 @@ document.addEventListener("keydown", function (e) {
   e.key === "ArrowRight" && nextSlide();
 });
 
-// scrolling
+//////////////////////////////
+///////////Contact////////////
+//////////////////////////////
 
-// Scrolling
-// window.scrollTo(
-//   s1coords.left + window.pageXOffset,
-//   s1coords.top + window.pageYOffset
-// );
-
-// window.scrollTo({
-//   left: s1coords.left + window.pageXOffset,
-//   top: s1coords.top + window.pageYOffset,
-//   behavior: 'smooth',
-// });
-// JavaScript code for sending email
-// function sendEmail(event) {
-//   event.preventDefault();
-
-//   const formData = new FormData(document.querySelector(".contact-form-box"));
-
-//   const data = {
-//     name: formData.get("name"),
-//     email: formData.get("email"),
-//     subject: formData.get("subject"),
-//     phone: formData.get("phone"),
-//     message: formData.get("message"),
-//   };
-
-//   fetch("https://api.emailjs.com/api/v1.0/email/send", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify({
-//       service_id: "YOUR_EMAILJS_SERVICE_ID",
-//       template_id: "YOUR_EMAILJS_TEMPLATE_ID",
-//       user_id: "YOUR_EMAILJS_USER_ID",
-//       template_params: {
-//         to_email: "biniyamkefyalew1@gmail.com",
-//         from_name: data.name,
-//         from_email: data.email,
-//         subject: data.subject,
-//         phone: data.phone,
-//         message: data.message,
-//       },
-//     }),
-//   })
-//     .then((response) => {
-//       if (response.ok) {
-//         alert("Email sent successfully!");
-//       } else {
-//         alert("Error sending email. Please try again.");
-//       }
-//     })
-//     .catch((error) => {
-//       console.error("Error:", error);
-//       alert("An error occurred. Please try again later.");
-//     });
-// }
-var i = 0;
-var txt = ` i am Lorem ipsum dolor sit amet consectetur adipisicing elit.
-  Dolores consequuntur animi incidunt quos error ex earum, praesentium
-  velit eaque modi tempora quisquam officia ab fugit architecto
-  molestias. Quia, modi voluptas.`; // The text you want to display
-var speed = 25; // The speed/duration of the effect in milliseconds
-function sendEmail(e) {
-  e.preventDefault();
+function sendEmail(E) {
+  // Get form data
+  E.preventDefault();
   var name = document.getElementById("name").value;
   var email = document.getElementById("email").value;
   var subject = document.getElementById("subject").value;
   var phone = document.getElementById("phone").value;
   var message = document.getElementById("message").value;
 
+  // Compose email link
   var mailtoLink =
     "mailto:biniyamkefyalew1@gmail.com" +
     "?subject=" +
@@ -138,26 +164,33 @@ function sendEmail(e) {
     encodeURIComponent(
       "Name: " +
         name +
-        "\nEmail: " +
+        "\n" +
+        "Email: " +
         email +
-        "\nPhone Number: " +
+        "\n" +
+        "Phone: " +
         phone +
-        "\n\nMessage: " +
+        "\n" +
+        "Message: " +
         message
     );
 
-  window.location.href = mailtoLink;
+  // Create a temporary <a> element
+  var anchor = document.createElement("a");
+  anchor.href = mailtoLink;
+  anchor.target = "_blank";
+
+  // Append the anchor to the document body
+  document.body.appendChild(anchor);
+
+  // Trigger a click event on the anchor
+  anchor.click();
+
+  // Clean up: remove the temporary anchor
+  document.body.removeChild(anchor);
+  console.log("cli");
 }
+
 document
   .querySelector(".submit-button")
   .addEventListener("click", (e) => sendEmail(e));
-
-// // auto typing effect on bio
-function typeWriter() {
-  if (i < txt.length) {
-    biography.innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-}
-typeWriter();

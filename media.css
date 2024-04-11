@@ -1,38 +1,149 @@
-@media (max-width: 60em) {
-  .project {
-    display: flex;
-    flex-wrap: wrap;
+@media (max-width: 97em) {
+  .details p {
+    display: grid;
   }
-  .project-box {
-    height: 65rem;
+  .biography {
+    height: auto;
   }
-  .project-description {
-    width: 80%;
-    margin: 0 auto;
+}
+@media (max-width: 71rem) {
+  .navigation-items {
+    gap: 1.2rem;
   }
-  .hero-image {
-    width: 25rem;
+}
+@media (max-width: 66rem) {
+  .navigation-items {
+    margin-left: auto;
+    margin-top: 3.2rem;
+  }
+}
+@media (max-width: 66rem) {
+  .navigation-items {
+    margin-left: auto;
+    margin-top: 3.2rem;
   }
 }
 
-@media (max-width: 40em) {
+@media (max-width: 46em) {
   html {
-    font-size: 50%;
+    font-size: 40%;
+  }
+  body {
+    font-size: 1.8rem;
+  }
+  .contact-form-box {
+    display: flex;
+    flex-direction: column;
+  }
+  .project {
+    grid-template-columns: 1fr !important;
+  }
+  .projectimg {
+    margin-left: 0%;
+  }
+  .project-image {
+    width: 20rem;
+    height: 15rem;
+  }
+  .schosls {
+    padding: 0%;
+  }
+  .profile img {
+    margin: 0 auto;
+  }
+  .portfolio {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .education-details h1 {
+    font-size: 2.4rem;
+  }
+  header {
+    width: 90%;
+    font-size: 1.8rem;
+    line-height: 1.8;
+  }
+
+  .education-details h1 {
+    font-size: 2.4rem;
+  }
+  .brief-bio h1 {
+    margin: 0%;
+    font-weight: 400;
+  }
+  .menu-button {
+    display: block;
+  }
+
+  .navigation-items {
+    display: none;
+  }
+  .brief-bio {
+    display: block;
+  }
+  .navigation {
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
+  .logo_image {
+    height: auto;
+    width: 40%;
+  }
+  .profile {
+    display: grid;
+    justify-content: center;
+    width: 80%;
+  }
+  .skills-box {
+    padding: 1.2rem;
+  }
+  .details {
+    width: fit-content;
+    font-size: 2.4rem;
+    margin-left: 3.2rem;
+  }
+  .contact {
+    width: 80%;
+  }
+  .contact-image {
+    margin: 0 auto;
+  }
+  .link-box {
+    display: grid;
+    justify-content: center;
+  }
+  .link-box h3 {
+    text-align: center;
+  }
+  .links {
+    max-width: 70%;
+    margin: 0 auto;
+    margin-top: 3.2rem;
+  }
+  .motto {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .schools {
+    display: flex;
+    flex-wrap: unset;
+    overflow-x: scroll;
+  }
+}
+@media (max-width: 30em) {
+  html {
+    font-size: 35%;
+  }
+
+  .brief-bio {
+    padding: 0%;
   }
   .project-image {
     width: 15rem;
     height: 10rem;
   }
-  .contact-form-box {
-    margin: 3.2rem 0;
-  }
-  .contact-form-box input,
-  #subject,
-  #phone {
-    width: 85%;
-  }
-  #email,
-  #name {
-    width: 70%;
+  .brief-bio p {
+    font-size: 1.8rem;
   }
 }
