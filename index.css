@@ -465,7 +465,6 @@ h3 {
 .skills {
   text-align: right;
   height: 1rem;
-  padding: 0.2rem 1rem;
   padding-bottom: 0.5rem;
   font-size: 1.4rem;
   color: black;
@@ -510,11 +509,13 @@ header {
   text-align: center;
   padding: 20px 0;
 }
-.skills {
+.skills-continar {
   list-style: none;
   width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
 }
-.skills li {
+.skills-continar li {
   display: flex;
   align-items: center;
   gap: 3.2rem;
