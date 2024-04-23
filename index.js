@@ -178,8 +178,6 @@ send_button.addEventListener("click", function (e) {
   var phone_number = encodeURIComponent(
     document.querySelector("#phone_number").value
   );
-  var mailtoLink = `mailto:biniyamkefyalew1@gmail.com?subject=${subject}&body=i'm \t\t\t\t \t\t \t\t  ${name} %0D%0A%0D%0A%0D%0A  ${message} %0D%0A%0D%0A%0D%0A  Contact me via \t\t \t\t \t\t \t\t ${phone_number}`;
-  // var mailtoLink = `mailto:biniyamkefyalew1@gmail.com?subject=mail from biniyam's portfolio &body=some `;
-  // send_button.setAttribute("href", mailtoLink);
-  window.open(mailtoLink);
+  var mailtoLink = `mailto:biniyamkefyalew1@gmail.com?subject=${subject}&body=i'm \t\t\t\t \t\t \t\t${name}%0D%0A%0D%0A%0D%0A${message}%0D%0A%0D%0A%0D%0AContact me via \t\t \t\t \t\t \t\t ${phone_number}%0D%0A%0D%0A%0D%0A `;
+  window.location.href = mailtoLink; // Direct the user to the mail client with the mailto link
 });
