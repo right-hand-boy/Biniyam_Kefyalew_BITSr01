@@ -604,7 +604,6 @@
           </p>
         </div>
         <div class="skills-box">
-          <h3>Skills</h3>
           <ul class="skills">
             <li>
               <svg
@@ -624,7 +623,9 @@
                   d="M24,30.9v4.2l-7.9-2.6L15.7,27h4l0.2,2.5L24,30.9z M19.1,17H24v-4h-9.1l0.7,12H24v-4h-4.6L19.1,17z"
                 />
               </svg>
-              <input type="range" min="0" max="10" step="1" value="7.5" />75%
+              <div class="skill_level">
+                <div class="skills html">90%</div>
+              </div>
             </li>
             <li>
               <svg
@@ -641,7 +642,9 @@
                   fill="white"
                 />
               </svg>
-              <input type="range" min="0" max="10" step="1" value="7" />70%
+              <div class="skill_level">
+                <div class="skills css">70%</div>
+              </div>
             </li>
             <li>
               <svg
@@ -656,7 +659,9 @@
                   d="M29.538 32.947c.692 1.124 1.444 2.201 3.037 2.201 1.338 0 2.04-.665 2.04-1.585 0-1.101-.726-1.492-2.198-2.133l-.807-.344c-2.329-.988-3.878-2.226-3.878-4.841 0-2.41 1.845-4.244 4.728-4.244 2.053 0 3.528.711 4.592 2.573l-2.514 1.607c-.553-.988-1.151-1.377-2.078-1.377-.946 0-1.545.597-1.545 1.377 0 .964.6 1.354 1.985 1.951l.807.344C36.452 29.645 38 30.839 38 33.523 38 36.415 35.716 38 32.65 38c-2.999 0-4.702-1.505-5.65-3.368L29.538 32.947zM17.952 33.029c.506.906 1.275 1.603 2.381 1.603 1.058 0 1.667-.418 1.667-2.043V22h3.333v11.101c0 3.367-1.953 4.899-4.805 4.899-2.577 0-4.437-1.746-5.195-3.368L17.952 33.029z"
                 />
               </svg>
-              <input type="range" min="0" max="10" step="1" value="7.5" />75%
+              <div class="skill_level">
+                <div class="skills js">75%</div>
+              </div>
             </li>
             <li>
               <svg
@@ -679,7 +684,9 @@
                 />
                 <circle cx="24" cy="24" r="4" fill="#80deea" />
               </svg>
-              <input type="range" min="0" max="10" step="1" value="8" />80%
+              <div class="skill_level">
+                <div class="skills react">80%</div>
+              </div>
             </li>
             <li>
               <svg
@@ -783,7 +790,9 @@
                   />
                 </g>
               </svg>
-              <input type="range" min="0" max="10" step="1" value="8" />80%
+              <div class="skill_level">
+                <div class="skills c">80%</div>
+              </div>
             </li>
             <li>
               <svg
@@ -816,7 +825,9 @@
                   transform="translate(-349.945 -499.394)"
                 />
               </svg>
-              <input type="range" min="0" max="10" step="1" value="6" />60%
+              <div class="skill_level">
+                <div class="skills DB">60%</div>
+              </div>
             </li>
           </ul>
         </div>
@@ -838,7 +849,7 @@
           </div>
           <div class="school secondary-school">
             <h3>secondary School:</h3>
-            <p>dagmawi tewodrose primary school</p>
+            <p>dagmawi tewodrose secondary school</p>
             <p>debretabor,ethiopia</p>
             <p>year: <span>20017-2020</span></p>
             <p>Grade 12 Exam: <span>545</span></p>
@@ -1175,6 +1186,22 @@
             <a
               class="link"
               target="_blank"
+              href="https://twitter.com/Right_hand_boy"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 50 50"
+                width="48px"
+                height="48px"
+              >
+                <path
+                  d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z"
+                />
+              </svg>
+            </a>
+            <a
+              class="link"
+              target="_blank"
               href="https://github.com/right-hand-boy"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1252,7 +1279,7 @@
             <a
               class="link"
               target="_blank"
-              href="https://biniyamkefyalew1@gmail.com"
+              href="mailto:biniyamkefyalew1@gmail.com"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 48 48"
@@ -1304,7 +1331,12 @@
             required
             placeholder="subject"
           />
-          <input type="tel" required placeholder="phone number" id="phone" />
+          <input
+            type="tel"
+            required
+            placeholder="phone number"
+            id="phone_number"
+          />
           <textarea
             id="message"
             name="message"
@@ -1312,12 +1344,7 @@
             required
             placeholder="message"
           ></textarea>
-          <a
-            href="mailto:biniyamkefyalew1@gmail.com"
-            target="_blank"
-            class="send"
-            >Send</a
-          >
+          <button class="send" type="submit">Send</button>
         </form>
       </section>
       <footer class="footer">

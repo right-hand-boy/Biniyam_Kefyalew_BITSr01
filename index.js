@@ -38,7 +38,7 @@ more_button.addEventListener("click", function () {
 });
 
 //////////////////////////////
-///////////Navigation/////////
+//////////%0D%0Aavigation/////////
 //////////////////////////////
 function scroler(scrol) {
   window.scrollTo({
@@ -164,4 +164,22 @@ project_images.forEach((image, index) =>
 document.addEventListener("keydown", function (e) {
   if (e.key === "ArrowLeft") prevSlide();
   e.key === "ArrowRight" && nextSlide();
+});
+
+//////////////////////////////
+///////////Contact/////////
+//////////////////////////////
+const send_button = document.querySelector(".send");
+send_button.addEventListener("click", function (e) {
+  e.preventDefault();
+  var name = encodeURIComponent(document.querySelector("#name").value);
+  var subject = encodeURIComponent(document.querySelector("#subject").value);
+  var message = encodeURIComponent(document.querySelector("#message").value);
+  var phone_number = encodeURIComponent(
+    document.querySelector("#phone_number").value
+  );
+  var mailtoLink = `mailto:biniyamkefyalew1@gmail.com?subject=${subject}&body=i'm \t\t\t\t \t\t \t\t  ${name} %0D%0A%0D%0A%0D%0A  ${message} %0D%0A%0D%0A%0D%0A  Contact me via \t\t \t\t \t\t \t\t ${phone_number}`;
+  // var mailtoLink = `mailto:biniyamkefyalew1@gmail.com?subject=mail from biniyam's portfolio &body=some `;
+  // send_button.setAttribute("href", mailtoLink);
+  window.open(mailtoLink);
 });
