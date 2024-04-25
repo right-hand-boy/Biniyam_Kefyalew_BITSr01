@@ -10,7 +10,7 @@ const more_button = document.querySelector(".btn_2");
 const menu_button = document.querySelector(".menu-button");
 const menu_box = document.querySelector(".menu-box");
 const menu_items = document.querySelectorAll(".menu-item");
-const close_btn = document.querySelector(".close");
+const close_btn = document.querySelector(".close-button");
 
 var txt = ` 
 Following my academic endeavors, I ventured into the professional realm, where I
@@ -181,3 +181,21 @@ send_button.addEventListener("click", function (e) {
   var mailtoLink = `mailto:biniyamkefyalew1@gmail.com?subject=${subject}&body=i'm \t\t\t\t \t\t \t\t${name}%0D%0A%0D%0A%0D%0A${message}%0D%0A%0D%0A%0D%0AContact me via \t\t \t\t \t\t \t\t ${phone_number}%0D%0A%0D%0A%0D%0A `;
   window.location.href = mailtoLink; // Direct the user to the mail client with the mailto link
 });
+
+//
+const link_detail = document.querySelector(".link-detail");
+const link_domain = document.querySelector(".link-domain");
+const link_address = document.querySelector(".link-address");
+const social_link = document.querySelectorAll(".link");
+social_link.forEach((link, index) =>
+  link.addEventListener("mouseover", function () {
+    link_address.innerHTML = link.getAttribute("href");
+    link_domain.innerHTML = link.dataset.domain;
+  })
+);
+social_link.forEach((link) =>
+  link.addEventListener("mouseout", function (e) {
+    link_address.innerHTML = "";
+    link_domain.innerHTML = "";
+  })
+);

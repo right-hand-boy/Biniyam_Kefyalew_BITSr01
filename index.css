@@ -1,7 +1,6 @@
 /* //////////////////////////////////// */
 /* //////////////General////////////// */
 /* //////////////////////////////////// */
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"); */
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -39,6 +38,10 @@ h1 {
 }
 .hidden {
   display: none !important;
+}
+svg {
+  width: 48px;
+  height: 48px;
 }
 /* //////////////////////////////////// */
 /* //////////////Hero Section////////////// */
@@ -99,7 +102,7 @@ h1 {
 .menu-item:hover {
   background-color: var(--accent-color);
 }
-.close {
+.close-button {
   justify-self: right;
 }
 .logo_image {
@@ -257,6 +260,23 @@ h3 {
 .school-image {
   margin-top: 3.2rem;
 }
+.courses-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-width: 60rem;
+  margin: 3.2rem auto;
+  align-items: center;
+  justify-content: space-between;
+}
+.course {
+  font-size: 1.8rem;
+}
+.course-title {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
 /* //////////////////////////////////// */
 /* //////Projects////////////////////// */
 /* //////////////////////////////////// */
@@ -268,7 +288,7 @@ h3 {
   justify-content: space-around;
   padding: 3.2rem;
   margin: 0 auto;
-  overflow-x: hidden;
+  overflow-x: scroll;
 }
 .projects-bar:hover {
   overflow-x: scroll;
@@ -400,6 +420,23 @@ h3 {
 }
 .link-box {
   margin-bottom: 4.2rem;
+}
+.link-detail {
+  display: block;
+  color: black;
+  width: max-content;
+  height: 2rem;
+  font-size: 1.8rem;
+  padding: 1.2rem;
+  border-radius: 0.9rem;
+  text-decoration: none;
+  margin: 1.2rem auto;
+}
+.link-domain {
+  text-transform: capitalize;
+}
+.link-description:hover {
+  color: black;
 }
 
 /* //////////////////////////////////// */
