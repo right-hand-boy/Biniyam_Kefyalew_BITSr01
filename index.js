@@ -1,3 +1,4 @@
+// Copyright (c) 2024 Biniyam kefyalew
 const navigationItems = document.querySelectorAll(".navigation-item");
 const slides = document.querySelectorAll(".project");
 const project_images = document.querySelectorAll(".project-image");
